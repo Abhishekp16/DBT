@@ -1,0 +1,11 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+    
+        MySQL Assignment – 3
+
+1) Does ANSI recognize the data type DATE?
+Answer-> Yes, DATE datatype complies with ANSI as Well as ISO standards.
+
+2) Which subdivision of SQL is used to insert values in tables?
+Answer->  DML 
+(Data Manipulation Language) subdivision inserts values into tables. It also has two other statements UPDATE and DELETE.
