@@ -1,0 +1,26 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+
+Assignment –2
+Introducing Relational Databases.
+
+1) Which field of the Customers table is the primary key?
+Answer -> “CNUM” is the primary key for the customers table.
+
+
+2) What is the 4th column of the Customers table?
+Answer->  The 4th column in the customers table is “RATING”.
+
+
+
+3) What is another word for row? For column?
+Answer-> 
+- Another word for row is Tuple / Opportunity.
+- Another word for column is Attribute / Method
+
+
+4) Why isn’t it possible to see the first five rows of a table?
+Answer-> 
+Rows of table are scattered (fragmented) all over the DB Server HD. when you insert into a table wherever the system finds the free space in DB server HD.it will store the row there. thus it is not possible to view the first or last five rows of a table.
+
+
