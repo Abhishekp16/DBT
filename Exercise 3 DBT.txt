@@ -1,0 +1,53 @@
+Name:Abhishek Pawar
+ID:200240520004
+
+
+            Exercise 3
+
+
+
+1.Display all the Supplier names with the initial letter capital.
+
+Answer-> select concat(upper(substr(cname,1,1)),lower(substr(cname,2))) from customers;
+
+
+2 .Display all the Supplier names in upper case.  
+
+Answer-> select upper(sname) from S;
+
+
+
+3. Display all the Supplier names in lower case.  
+
+Answer-> select lower(sname) from S;
+
+
+
+4. Display all the Supplier names padded to 25 characters, with spaces on the left.  
+
+Answer-> select lpad (sname,25,' ') from S;
+
+
+
+5. Display all the Supplier names (with ‘la’ replaced by ‘ro’).    
+HINT: REPLACE. 
+
+Answer-> select replace (sname,'la','ro') from S;
+
+
+
+6. Implement the above command such that ‘l’ is replaced with ‘r’ and ‘a’ is replaced with ‘o’
+
+Answer->  select replace(replace(sname,'l','r'),'a','o') from supplier;
+
+
+
+7. Display the Supplier names and the lengths of the names.
+
+Answer-> select sname,length(sname) from S;
+
+
+
+8. Use the soundex function to search for a supplier by the name of ‘BLOKE’
+
+Answer-> select * from s where soundex(sname) = soundex('BLOKE');

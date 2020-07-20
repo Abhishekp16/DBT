@@ -1,0 +1,97 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+
+
+
+1. create table SEMP
+(
+EMPNO char(4),
+EMPNAME char(20),
+BASIC float(9,2),
+DEPTNO char(2),
+DEPTHEAD char(2)
+);
+
+
+2. create table SDEPT
+(
+DEPTNO char(2),
+DEPTNAME char(15)
+);
+
+
+3.  a.   insert into SDEPT 
+         values('10','Devlopment');
+ 
+    b.   insert into SDEPT 
+         values('20','Training');
+
+
+4.  a.  insert into SEMP
+        values('0001','SUNIL',6000,'10','NULL');
+
+    b.  insert into SEMP
+        values('0002','HIREN',8000,'20','NULL');
+
+    c.  insert into SEMP
+        values('0003','ALI',4000,'10','0001');
+
+    d.  insert into SEMP
+        values('0004','GEORGE',6000,'NULL','0001');
+
+    e.  create table s
+        (
+         `s#`int(4),
+         Sname varchar(10),
+         status char(10),
+         city varchar(10)
+        );
+
+    f.  create table p
+        (
+         `p#` int(4),
+          Pname varchar(10),
+          color varchar(10),
+          weight float(7,2),
+          city varchar(10)
+        );
+
+    g. create table j
+       (
+        `j#` int(4),
+         jname varchar(10),
+         city varchar(10)
+       );
+
+    h. create table spj
+       ( 
+        `s#` int(4),
+        `p#` int(4),
+        `j#` int(4),
+        qty float(7,2)
+       ); 
+
+
+5. select * from s;
+
+
+6. select `s#`,sname from s;
+
+7. select pname,color from p where CITY='London';
+
+8. select * from s where CITY='London';
+
+9. select * from s where CITY='Paris' or CITY='Athens';
+
+10. select * from j where CITY='Athens';
+
+11. select Pname,weight from p where weight between 12 and 14;
+
+12. select * from s where status>=20;
+
+13. select * from s where city!='London';
+
+14. select city from s;
+
+15. a. select weight*1000 from p;    ->for milligrams
+    b. select weight/1000 from p;    ->for kilograms
