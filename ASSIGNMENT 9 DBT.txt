@@ -1,0 +1,35 @@
+NAME: Abhishek Pawar
+Roll No:200240520004
+
+                   
+                                                    ASSIGNMENT 9
+
+
+Q1)Write a query that lists each order number followed by the name of the customer who made the order.
+
+Answer:-SELECT A.onum,B.cname
+FROM orders A,
+     customers B
+WHERE B.cnum=A.cnum ;
+
+Q2)Write a query that gives the names of both the salesperson and the customer for each order along with the order number.
+
+Answer:-select sname,cname,onum
+   from salespeople A,
+        customers B,
+        orders C
+where C.snum=A.snum
+ and  C.snum=B.snum;
+ 
+ Q3)Write a query that produces all customers serviced by salespeople with a commission above 12%. Output the customer’s name, the salesperson’s name, and the salesperson’s rate of commission.
+ 
+Answer:- select B.cname,A.sname,comm*100 "new_comm"
+     from salespeople A,
+          customers B
+          where B.snum=A.snum
+          and comm>.12;
+          
+ Q4)Write a query that calculates the amount of the salesperson’s commission on each order by a customer with a rating above 100.
+ 
+Answer:-select amt,comm from orders A,customers B, salespeople C
+	where A.snum = C.snum AND A.snum = B.snum AND rating > 100;
