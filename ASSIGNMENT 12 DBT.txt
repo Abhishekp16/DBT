@@ -1,0 +1,25 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+
+
+
+1) Write a query that selects all customers whose ratings are equal to or greater than
+ANY of Serres’.
+ 
+Answer: select cname,rating from customers where
+	rating >= any (select rating from customers where 
+	snum in (select snum from salesperson where sname = 'serres'))
+
+2) Write a query using ANY or ALL that will find all salespeople who have no
+customers located in their city. 
+
+Answer :select cname,city from customers where city != all(select city from salesperson)
+
+3) Write a query that selects all orders for amounts greater than any for the
+customers in London. 
+Answer: select * from orders where 
+	amt > any(select amt from orders where 
+	cnum = any(select cnum from Customers where city = 'london'))
+
+4) Write the above query using MIN or MAX. 
+Answer: select * from orders where amt > any(select min(amt) from orders where cnum = any(select cnum from Customers where city = 'london'))
