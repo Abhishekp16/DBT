@@ -1,0 +1,31 @@
+Name: Abhishek Pawar
+Roll No: 200240520004       
+
+         Assignment No – 16
+
+
+
+
+1) Write a command that will enable a user to pull orders grouped by date out of the Orders table quickly.
+
+Answer:  CREATE INDEX d_order ON orders(odate);
+
+
+
+2) If the Orders table has already been created, how can you force the onum field to be unique (assume all current values are unique)?
+
+Answer: alter table orders add constraint U_o_Onum unique (Onum);
+
+
+
+3) Create an index that would permit each salesperson to retrieve his or her orders grouped by date quickly.
+
+Answer: CREATE INDEX I_DATE ON orders(odate);
+
+
+
+4) Let us assume that each salesperson is to have only one customer of a given rating, and that this is currently the case. Enter a command that enforces it.
+
+Answer: ALTER TABLE customers add  PRIMARY KEY (rating);
+
+

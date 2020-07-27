@@ -1,0 +1,24 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+
+
+          Assignment No -15
+
+
+1) Assume there is a table called Multicust, with all of the same column definitions as Salespeople.
+Write a command that inserts all salespeople with more than one customer into this table. 
+
+Answer: CREATE TABLE Multicast AS SELECT * FROM salespeople
+      WHERE snum IN(SELECT snum FROM customers GROUP BY snum
+      HAVING count(snum)>1);
+
+2) Write a command that deletes all customers with no current orders. 
+
+Answer: DELETE from customers WHERE cnum=ANY(SELECT cnum FROM orders WHERE cnum NOT IN(SELECT cnum FROM customers));
+ 
+3) Write a command that increases by twenty percent the commissions of all salespeople with total
+orders above Rs. 3,000. 
+
+Answer: update salespeople set comm = comm + 0.20 
+      where snum in
+(select snum from orders  group by snum having sum(amt) > 3000);
