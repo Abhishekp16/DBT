@@ -1,0 +1,52 @@
+Name:Abhishek Pawar
+Roll No:200240520004
+
+
+           Assignment No:-13
+
+
+1) Create a union of two queries that shows the names, cities, and ratings of all
+customers. Those with rating of 200 or greater will also have the words “High
+Rating”, while the others will have the words “Low Rating”.
+
+Answer:-SELECT cname,city,"HIGH RATING" RATING 
+FROM customers
+WHERE rating>200
+UNION
+SELECT cname,city,"LOW RATING" RATING 
+FROM customers
+WHERE rating <=200;
+
+2)Write a command that produces the name and number of each salesperson and
+each customer with more than one current order. Put the results in alphabetical
+order.
+
+Answer:-SELECT sname,snum,cname
+FROM salespeople
+JOIN customers using(snum)
+WHERE snum IN
+    (SELECT snum
+     FROM customers
+     GROUP BY snum
+     HAVING count(snum)>1)
+ORDER BY sname,cname;
+
+
+3)Form a union of three queries. Have the first select the snums of all salespeople in
+San Jose; the second, the cnums of all customers in San Jose; and the third the
+onums of all orders on October 3. Retain duplicates between the last two queries
+but eliminate any redundancies between either of them and the first.
+
+Answer: 
+select distinct snum from customers where city='san jse'
+union all
+select snum from orders
+      where odate='1990-10-03'
+union
+select snum from salespeople where city='san jose';
+
+
+
+
+
+
