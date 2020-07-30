@@ -1,0 +1,49 @@
+Name: Abhishek Pawar
+Roll No: 200240520004
+
+                 
+
+                                              Assignment No - 19
+
+
+
+1) Create a view that shows all of the customers who have the highest ratings.
+
+Answer:   create view Highest_Ratings
+as 
+select * from CUSTOMERS
+	where Rating in (select max(Rating) from CUSTOMERS);
+    
+desc Highest_Ratings;
+
+	
+2) Create a view that shows the number of salespeople in each city.
+
+Answer: create view SALESPEOPLE_CITY
+as
+select City, count(City) from SALESPEOPLE
+	group by City;
+    
+desc SALESPEOPLE_CITY;
+
+select * from SALESPEOPLE_CITY; 
+
+
+3) Create a view that shows the average and total orders for each salesperson after his or her name. Assume all names are unique.
+
+Answer:  create view TOTAL_ORDERS_SP
+as
+select Sname, avg(Onum) AVERAGE, count(Onum) as "TOTAL_ORDERS" from SALESPEOPLE, ORDERS
+	where SALESPEOPLE.Snum = ORDERS.Snum
+		group by Sname;
+
+	
+4) Create a view that shows each salesperson with multiple customers.
+
+Answer:  create view SP_CU
+as 
+select SALESPEOPLE.Snum, Cnum from SALESPEOPLE, CUSTOMERS
+	where SALESPEOPLE.Snum = CUSTOMERS.Snum
+		group by Sname;
+        
+select * from SP_CU;
